@@ -1,0 +1,686 @@
+label[for*="empty"] {opacity: 0.5!important}
+
+tcardpkm {
+  --color: grey;
+  --border: black;
+  display: block;
+  background: white;
+  width: 600px;
+  border-radius: 20px;
+  border: 3px solid var(--border);
+  font-family: poppins;
+  color: black;
+  overflow: hidden;
+position:relative;
+}
+
+tcardpkm tp {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  background-color: var(--color);
+  background-image: url(https://www.transparenttextures.com/patterns/gplay.png);
+  border-bottom: 3px solid var(--border);
+  color: var(--border);
+  padding-left: 10px;
+  gap: 5px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 20px;
+}
+
+tcardpkm tp:before {
+  content: "\ec17";
+  font-family: "cappuccicons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  filter: drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white)
+    drop-shadow(0 1px 0 white) drop-shadow(0 -1px 0 white);
+}
+
+tcardpkm tp:after {
+  content: "POKÉMON CARD";
+  filter: drop-shadow(1px 0 0 white) drop-shadow(-1px 0 0 white)
+    drop-shadow(0 1px 0 white) drop-shadow(0 -1px 0 white);
+}
+
+tcardpkm ti {
+    display: block;
+    background:var(--border);
+    width: fit-content;
+    padding: 2px 10px 0;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    right:15px;
+    top:13px;
+    color:white;
+}
+
+tcardpkm ti2 {
+    display: block;
+    background:var(--border);
+    width: fit-content;
+    padding: 0 10px 2px;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    left:15px;
+    bottom:13px;
+    color:white;
+}
+
+tcardpkm mn {
+  display: flex;
+  height: 25px;
+  border-bottom: 3px solid var(--border);
+  margin: auto;
+  justify-content: center;
+  gap: 7px;
+  align-items: center;
+  padding: 25px 10px 0 10px;
+}
+
+tcardpkm mn label {
+  background: var(--color);
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  border-radius: 100%;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+  height: 7px;
+  display: flex;
+  align-content: flex-end;
+  flex-wrap: wrap;
+}
+
+tcardpkm mn label.checked,tcardpkm mn label:hover {
+  background: var(--border)!important;
+}
+
+tcardpkm mn label p {
+  margin: 0;
+  position: absolute;
+  top: -30px;
+  font-size: 9px !important;
+  color: black;
+  text-transform: uppercase;
+  padding: 2px 3px;
+  border-radius: 2px;
+  font-weight: bold;
+    white-space: nowrap;
+}
+
+tcardpkm mn label img {
+  filter: drop-shadow(1px 0 white) drop-shadow(-1px 0 white)
+    drop-shadow(0 1px white) drop-shadow(0 -1px white);
+  height: 32px !important;
+  width: 32px !important;
+  object-fit: none !important;
+  object-position: bottom;
+}
+
+tcardpkm input {
+  display: none;
+}
+
+tcardpkm tabs {
+  display: flex;
+}
+
+tcardpkm ppoke {
+  display: none;
+  position: relative;
+  font-family: poppins;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 315px;
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+
+tcardpkm ppoke bn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: flex;
+  width: 560px;
+  background: white;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+tcardpkm ppoke bn nm {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  gap: 5px;
+  padding-left: 5px;
+}
+
+tcardpkm ppoke bn nm img {
+	height:32px;
+	width:32px;
+	object-fit:none;
+	object-position:center;
+}
+
+tcardpkm ppoke bn nm i {
+  font-size: 15px;
+  margin: 0 0 -2px 5px;
+  color: var(--border);
+}
+
+tcardpkm ppoke bn nm i:before {
+  content: "lvl.";
+}
+
+tcardpkm ppoke bn t {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  padding-right: 5px;
+  position: relative;
+  width: 100px;
+}
+
+tcardpkm ppoke bn t img {
+  height: 24px;
+  image-rendering: auto;
+}
+
+tcardpkm ppoke bn t img.tera {
+  height: 26px;
+}
+
+tcardpkm ppoke bn t m {
+  width: 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 5px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  background: white;
+  height: 26px;
+  opacity: 0;
+  transition: 300ms all;
+}
+
+tcardpkm ppoke inf {
+  display: flex;
+  overflow-y: auto;
+  width: 250px;
+  margin-top: 42px;
+  background: white;
+  font-size: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 5px;
+}
+
+tcardpkm ppoke inf il {
+  display: flex;
+  font-weight: bold;
+  width: 60px;
+  text-transform: uppercase;
+  background: var(--color);
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+tcardpkm ppoke inf ir {
+  width: 180px;
+  text-transform: capitalize;
+  position: relative;
+    display: flex;
+    align-items: center;
+}
+
+tcardpkm ppoke inf ir x {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 3px;
+}
+
+tcardpkm ppoke inf ir m {
+  position: absolute;
+  width: 180px;
+  left: 0;
+  top: 0;
+  background: white;
+  opacity: 0;
+    display: flex;
+    align-items: center;
+  transition: 300ms all;
+}
+
+tcardpkm ppoke inf ir i {
+  font-size: 10px;
+  display: block;
+  margin-top: -5px;
+}
+
+tcardpkm ppoke inf ir img {
+  content: url(https://www.pokepedia.fr/images/archive/e/ed/20201029045158%21Miniature_Chromatique_HOME.png);
+  height: 13px;
+  image-rendering: auto;
+  margin: -3px -2px;
+}
+
+tcardpkm ppoke inf ir i img {
+  content: url(https://www.pokepedia.fr/images/archive/e/ed/20201029045158%21Miniature_Chromatique_HOME.png);
+  height: 10px;
+  image-rendering: auto;
+  margin: -1px -3px;
+}
+
+tcardpkm ppoke inf id {
+  display: block;
+  width: 100%;
+  font-style: italic;
+  text-align: center;
+  margin: 2px 0 -2px;
+  position: relative;
+  height: 36px;
+  overflow: auto;
+}
+
+tcardpkm ppoke inf id m {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background: white;
+  transition: 300ms all;
+}
+
+tcardpkm ppoke desc {
+  display: block;
+  text-align: justify;
+  height: 86px;
+  font-size: 11px;
+  overflow: auto;
+  width: 240px;
+  margin-top: 10px;
+  background: white;
+  border: 10px solid white;
+  padding-right: 10px;
+  border-radius: 0 0 0 10px;
+}
+
+tcardpkm ppoke r {
+  display: block;
+  margin-top: 42px;
+  height: 275px;
+  position: relative;
+  width: 280px;
+}
+
+tcardpkm ppoke r it {
+  display: flex;
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  background: white;
+  padding: 5px 10px 5px 5px;
+  align-items: center;
+  gap: 5px;
+  z-index: 3;
+}
+
+tcardpkm ppoke r it img {
+  height: 22px;
+  width: 22px;
+  object-fit: none;
+  object-position: center;
+}
+
+tcardpkm ppoke sp,
+tcardpkm ppoke spm {
+  display: flex;
+  width: 280px;
+  height: 243px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms all;
+  opacity: 1;
+}
+
+tcardpkm ppoke sp x,
+tcardpkm ppoke spm x {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    filter: drop-shadow(1px 0 white) drop-shadow(-1px 0 white)
+    drop-shadow(0 1px white) drop-shadow(0 -1px white);
+z-index:2;
+}
+
+tcardpkm ppoke sp img,
+tcardpkm ppoke spm img {
+  margin-top: 0px;
+  transform: scale(2);
+  image-rendering: pixelated;
+  z-index: 2;
+  position: absolute;
+  height: 96px;
+  width: 96px;
+  object-fit: scale-down;
+  transition: 300ms all;
+}
+
+tcardpkm ppoke sp img.om,
+tcardpkm ppoke spm img.om {
+  margin-top: 0px;
+  transform: scale(2);
+  image-rendering: pixelated;
+  z-index: 1;
+  bottom: 30px;
+  left: 90px;
+  transform: scaley(-0.75) scalex(2.25);
+  filter: grayscale(1) contrast(0%);
+  mix-blend-mode: multiply;
+  position: absolute;
+}
+
+tcardpkm ppoke spm {
+  position: absolute;
+  top: 0;
+}
+
+tcardpkm ppoke spm img {
+  opacity: 0;
+}
+
+tcardpkm ppoke mv {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  width: 555px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+tcardpkm ppoke mv button {
+  border: none;
+  cursor: pointer;
+  background: white;
+  align-items: center;
+  font-size: 15px;
+  font-family: poppins;
+  width: 280px;
+  font-weight: bold;
+  text-transform: uppercase;
+  pointer-events: auto;
+  border-radius: 0 0 10px 0;
+color:black!important;
+}
+
+tcardpkm ppoke:has(.dropdown-content.show) mv button {
+  border-radius: 0;
+}
+
+tcardpkm ppoke mv button span {
+  pointer-events: none;
+}
+
+tcardpkm .dropdown-content {
+  background: url(https://i.imgur.com/xSlO5Zp.png);
+    background-position:bottom right;
+    image-rendering: auto;
+  width: 280px;
+  height: 0px;
+  z-index: 1;
+  font-size: 11px;
+  text-align: center;
+  position: relative;
+  transition: 500ms all;
+}
+
+tcardpkm .show {
+  height: 250px;
+}
+
+tcardpkm .attlist {
+  padding:3px 10px 0 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 0;
+  overflow: hidden;
+  pointer-events: auto;
+  transition: 500ms all;
+}
+
+tcardpkm .show .attlist {
+  height: 248px;
+}
+
+tcardpkm .attlist div {
+  display: flex;
+  gap: 5px;
+  height: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: zoom-in;
+	    justify-content: flex-end;
+}
+
+tcardpkm .attlist div img {
+  height: 13px;
+  width: 13px;
+  image-rendering: auto;
+}
+
+tcardpkm .attlist div n {
+  font-weight: bold;
+  text-align: left;
+  flex:1;
+  text-transform: uppercase;
+}
+
+tcardpkm .attlist div g {
+  width: 23px;
+  overflow: hidden;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+tcardpkm .attlist div pr,
+tcardpkm .attlist div pu {
+  display: block;
+  text-transform: uppercase;
+  background: var(--color);
+  text-align: center;
+  padding: 0 3px;
+  height: 15px;
+  width: 30px;
+  overflow: hidden;
+  font-weight: bold;
+  color: white;
+}
+
+tcardpkm .attlist div pu {
+  width: 20px;
+}
+
+tcardpkm .attlist div pr:after {
+  content: "%";
+}
+
+tcardpkm .attlist div#lock pr:after {
+  content: "";
+}
+
+tcardpkm .attlist div div {
+  width: 230px;
+  opacity: 0;
+  transition: 300ms all;
+  pointer-events: none;
+  position: absolute;
+  left: -225px;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+tcardpkm .attlist div div d {
+  font-style: italic;
+  padding: 5px;
+  background: var(--border);
+  color: white;
+}
+
+tcardpkm .attlist div:hover div {
+  opacity: 1;
+}
+
+tcardpkm .attlist div div:after {
+  content: "";
+  width: 1px;
+  margin: 0 -10px 0 -5px;
+  overflow: hidden;
+  border: 10px solid var(--border);
+  border-color: transparent transparent transparent var(--border);
+}
+
+tcardpkm #empty n,
+tcardpkm #empty g,
+tcardpkm #empty pu,
+tcardpkm #empty pr,
+tcardpkm #empty img {
+  opacity: 0.3;
+}
+
+tcardpkm #locked n,
+tcardpkm #locked g,
+tcardpkm #locked pu,
+tcardpkm #locked pr,
+tcardpkm #locked img {
+  opacity: 0.3;
+}
+
+tcardpkm ppoke:has(it.mega:hover) {
+  bn t m,
+  ir m,
+  id m,
+  spm img {
+    opacity: 1;
+  }
+}
+
+tcardpkm ppoke:has(it.mega:hover) sp img {
+  opacity: 0;
+}
+
+tcardpkm input:checked + ppoke {
+  display: flex;
+  width: 560px;
+  overflow: hidden;
+}
+
+tcardpkm bt {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+  background-color: var(--color);
+  background-image: url(https://www.transparenttextures.com/patterns/gplay.png);
+  border-top: 3px solid var(--border);
+  color: var(--border);
+  font-size: 10px;
+  padding-right: 10px;
+}
+
+tcardpkm bt:after {
+  content: "@Maskaaribou";
+}
+
+tcardpkm.xl mn:has(+ti2) {
+    border-bottom: none;
+    border-top:3px solid var(--border);
+    padding:25px 0 0;
+}
+
+tcardpkm.xl mn:first-of-type {
+    justify-content: start;
+    overflow-x:auto;
+    height:30px;
+	padding:27px 7px 0;
+    border-bottom: 3px solid var(--border);
+}
+
+tcardpkm.xl {
+    width:645px;
+}
+
+
+tcardpkm.xl input:checked + ppoke {
+    width:605px;
+}
+
+tcardpkm.xl ppoke bn {
+    width:605px;
+}
+
+tcardpkm.xl r, tcardpkm.xl ppoke sp,tcardpkm.xl ppoke mv button, tcardpkm.xl .dropdown-content {
+    width:300px;
+}
+
+tcardpkm.xl ppoke inf {
+    width:275px
+}
+
+tcardpkm.xl ppoke desc {
+    width:265px
+}
+
+tcardpkm.xl ppoke inf ir {
+    width:210px
+}
+
+
+@font-face{font-family:'cappuccicons';src:url('https://dl.dropbox.com/scl/fi/sc86ithpqabg05jeqkmqb/Cappuccicons.woff2?rlkey=w8w9d29fwlppagkgxtsq7mcvd&st=gya2pi3s') format('woff2');font-weight:normal;font-style:normal;font-display:block;}
+
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: var(--color);
+}
