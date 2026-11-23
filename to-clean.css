@@ -59,6 +59,16 @@
   --nav-line: rgba(0, 0, 0, 0.34);
   --quote:"The sacred and the eternal are always there. It's the profane that comes and goes.";
   --bann:url(https://cdna.artstation.com/p/assets/images/images/052/083/212/large/lim-philippe-wdr-pl-mountain.jpg?1658910537);
+  --poke1:url(https://i.imgur.com/EuUNY1T.png);
+  --poke2:url(https://i.imgur.com/MT0T5R8.png);
+}
+:root[data-color-scheme="flotille"] {
+  --nav-night: #304763;
+  --nav-paper: #b0e3d6;
+  --nav-mist: #e0f8f9;
+  --nav-line: rgba(0, 0, 0, 0.34);
+  --quote:"The ships and the ingenuity are always there. It's shelter that comes and goes.";
+  --bann:url(https://cdna.artstation.com/p/assets/images/images/052/083/212/large/lim-philippe-wdr-pl-mountain.jpg?1658910537);
   --poke1:url(https://2img.net/i.imgur.com/qVhfwxJ.png);
   --poke2:url(https://2img.net/i.imgur.com/GV9UzT1.png);
 }
