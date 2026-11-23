@@ -841,3 +841,326 @@ a {
     display: none;
   }
 }
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Italiana&family=Manrope:wght@400;500;600&display=swap");
+
+/* ================================
+   CONTENEUR GÉNÉRAL
+================================ */
+.banban {
+    border:70px solid var(--nav-night);
+    border-bottom-width: 0;
+    height:calc(100vh - 40px);
+    overflow: hidden;
+    position: relative;
+}
+
+.banban #header:after {
+    content:"";
+    height:100%;
+    background: url(https://2img.net/i.imgur.com/oyQuoDk.gif);
+    position: absolute;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    mix-blend-mode:plus-lighter;
+    pointer-events: none;
+    z-index: 9
+}
+
+#header {
+  width: 100%;
+  height: 100%;;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  color: var(--nav-paper);
+  background:var(--nav-night);
+  text-decoration: none;
+    border:1px solid var(--nav-line);
+    border-top-width: 0;
+}
+
+#header,
+#header * {
+  box-sizing: border-box;
+}
+
+.banniere {
+  height: 100%;
+  position: relative;
+    padding: 20px 0 0;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Étoiles décoratives */
+
+.banniere::before,
+.banniere::after {
+  content: "✦";
+  position: absolute;
+  z-index: 12;
+  color: #ece9df;
+  font-family: "Italiana", serif;
+  line-height: 1;
+  pointer-events: none;
+  animation: empyrean-star 3.6s ease-in-out infinite;
+}
+
+.banniere::before {
+  left: 14%;
+  top: 29%;
+  font-size: 42px;
+}
+
+.banniere::after {
+  right: 13%;
+  bottom: 25%;
+  font-size: 24px;
+  animation-delay: -1.7s;
+}
+
+/* ================================
+   TITRE
+================================ */
+
+.banniere > txt {
+  width: min(1280px, calc(100% - 80px));
+  position: absolute;
+  z-index: 10;
+  top: 8%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr) auto minmax(40px, 1fr);
+  align-items: center;
+  gap: 28px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.banniere > txt > l,
+.banniere > txt > r {
+  height: 1px;
+  display: block;
+  background: rgba(236, 233, 223, 0.45);
+}
+
+.banniere > txt > titre {
+  display: block;
+  font-family: "Italiana", serif;
+  font-size: clamp(70px, 9.5vw, 150px);
+  font-weight: 400;
+  line-height: 0.72;
+  letter-spacing: -0.055em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.banniere > txt > titre > x {
+  display: block;
+  color: transparent;
+  font: inherit;
+  -webkit-text-stroke: 3px var(--nav-paper);
+  transform: scaleX(1.04);
+}
+
+/* ================================
+   ARCHE CENTRALE
+================================ */
+
+/* Arche centrale : arrière-plan */
+
+.banniere > pic {
+  width: 60%;
+  height:75.8vh!important;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(236, 233, 223, 0.72);
+  border-radius: 50% 50% 0 0;
+  background: var(--bann);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* Titre placé au milieu de la bannière */
+
+.banniere > txt {
+  width: min(1500px, calc(100% - 90px));
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  grid-template-columns: minmax(30px, 1fr) auto minmax(30px, 1fr);
+  align-items: center;
+  gap: 25px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.banniere > txt > l,
+.banniere > txt > r {
+  height: 1px;
+  display: block;
+  background: rgba(236, 233, 223, 0.45);
+}
+
+.banniere > txt > titre {
+  display: block;
+    color:var(--nav-paper);
+  font-family: "Italiana", serif;
+  font-size: clamp(90px, 11vw, 175px);
+  font-weight: 400;
+  line-height: 0.68;
+  letter-spacing: -0.055em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 8px 30px rgba(16, 17, 19, 0.22);
+}
+
+.banniere > txt > titre > x {
+  display: block;
+  font: inherit;
+  transform: scaleX(1.04);
+    margin: 2px 0 0;
+}
+
+/* Base commune des Pokémon */
+
+.banniere > pkml,
+.banniere > pkmr {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banniere > pkml,
+.banniere > pkmr {
+  width: 100%;
+  height: 500px;
+  display: block;
+  filter:
+    grayscale(0.15)
+    drop-shadow(0 22px 30px rgba(0, 0, 0, 0.55));
+}
+
+/*
+ * Pokémon gauche :
+ * z-index supérieur au titre, donc il passe devant.
+ */
+
+.banniere > pkml {
+  width: clamp(210px, 24vw, 390px);
+    background-image:var(--poke1);
+  z-index: 11;
+  left: 2%;
+  top: 40%;
+  animation: pokemon-float-left 6.5s ease-in-out infinite;
+}
+
+/*
+ * Pokémon droit :
+ * placé devant l’arche mais derrière le titre.
+ */
+
+.banniere > pkmr {
+  width: clamp(160px, 18vw, 290px);
+    background-image:var(--poke2);
+  z-index: 7;
+  right: 4%;
+  top: 4%;
+  animation: pokemon-float-right 5.4s ease-in-out infinite;
+}
+
+/* ================================
+   DATE
+================================ */
+
+.banniere > sbt {
+  width: min(500px, 46vw);
+  padding: 11px 10px;
+  position: absolute;
+  z-index: 11;
+  left: 50%;
+  bottom: 24px;
+  display: block;
+  transform: translateX(-50%);
+  border-top: 1px solid var(--nav-line);
+  border-bottom: 1px solid var(--nav-line);
+  color: var(--nav-paper);
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.13em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.banniere sbt i:after {
+    content:var(--quote);
+    display: block;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes empyrean-star {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(45deg);
+  }
+}
+
+@keyframes pokemon-float-left {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate3d(10px, -17px, 0) rotate(-4deg);
+  }
+}
+
+@keyframes pokemon-float-right {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(7deg);
+  }
+
+  50% {
+    transform: translate3d(-8px, -13px, 0) rotate(11deg);
+  }
+}
+
+
+
+.main_forum {display: none}
