@@ -1,0 +1,812 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Italiana&family=Manrope:wght@400;500;600&display=swap");
+
+:root {
+  --nav-night: #101113;
+  --nav-paper: #ece9df;
+  --nav-mist: #b9c4c8;
+  --nav-line: rgba(240, 237, 225, 0.34);
+  --nav-serif: "Italiana", serif;
+  --nav-mono: "DM Mono", monospace;
+  --quote:"The sky and the moon are always there. It's the clouds that come and go.";
+}
+:root[data-color-scheme="jour"] {
+  --nav-night: #ece9df;
+  --nav-paper: #101113;
+  --nav-mist: #b9c4c8;
+  --nav-line: rgba(0, 0, 0, 0.34);
+  --quote:"The sky and the sun are always there. It's the clouds that come and go.";
+}
+:root[data-color-scheme="acheron"] {
+  --nav-night: #34120d;
+  --nav-paper: #f9dba2;
+  --nav-mist: #faf0cb;
+  --nav-line: rgba(0, 0, 0, 0.34);
+  --quote:"The crown and the gold are always there. It's the loyalty that comes and goes.";
+}
+:root[data-color-scheme="arcadia"] {
+  --nav-night: #304763;
+  --nav-paper: #b0e3d6;
+  --nav-mist: #e0f8f9;
+  --nav-line: rgba(0, 0, 0, 0.34);
+  --quote:"Beauty and progress are always there. It's the human cost that we choose to ignore.";
+}
+:root[data-color-scheme="blackrock"] {
+  --nav-night: #304763;
+  --nav-paper: #b0e3d6;
+  --nav-mist: #e0f8f9;
+  --nav-line: rgba(0, 0, 0, 0.34);
+  --quote:"The dead never leave the battlefield. It's the living who learn to forget.";
+}
+:root[data-color-scheme="chikyu"] {
+  --nav-night: #304763;
+  --nav-paper: #b0e3d6;
+  --nav-mist: #e0f8f9;
+  --nav-line: rgba(0, 0, 0, 0.34);
+  --quote:"The sacred and the eternal are always there. It's the profane that comes and goes.";
+}
+:root[data-color-scheme="nidavellir"] {
+  --nav-night: #304763;
+  --nav-paper: #b0e3d6;
+  --nav-mist: #e0f8f9;
+  --nav-line: rgba(0, 0, 0, 0.34);
+  --quote:"Duty and power are always there. It's victory that comes and goes.";
+}
+
+
+
+
+/* ================================
+   BARRE DE NAVIGATION EMPYREAN
+================================ */
+
+.navigation_top {
+  z-index: 999;
+  display: flex;
+  align-items: center;
+    justify-content: center;
+  border: 70px solid var(--nav-night);
+    border-top-width:20px;
+    border-bottom-width:0px;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+}
+
+.empyrean-navbar {
+  padding: 5px 0 5px 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  color: var(--nav-paper);
+  border: 1px solid var(--nav-line);
+  background: var(--nav-night);
+    width:100%;
+}
+
+.empyrean-navbar,
+.empyrean-navbar * {
+  box-sizing: border-box;
+}
+
+/* ================================
+   LOGOTYPE
+================================ */
+
+.empyrean-navbar-brand {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  color: var(--nav-paper) !important;
+  font-family: var(--nav-serif);
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 0.11em;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.empyrean-navbar-brand i {
+  margin: 0 9px;
+  color: var(--nav-mist);
+  font-family: var(--nav-serif);
+  font-size: 13px;
+  font-style: normal;
+  transition: transform 0.4s ease;
+}
+
+.empyrean-navbar:hover .empyrean-navbar-brand i {
+  transform: rotate(90deg);
+}
+
+/* ================================
+   CONTENEUR FORUMACTIF
+================================ */
+
+.empyrean-navbar-links {
+  min-width: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/*
+ * Réinitialisation de la classe .navbar de Forumactif.
+ * Les sélecteurs sont volontairement préfixés pour éviter
+ * d'affecter les autres éléments éventuels du thème.
+ */
+
+.empyrean-navbar-links {
+  width: auto;
+  min-height: 0;
+  margin: 0 0 0 auto !important;
+  padding: 10px !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  list-style: none;
+  border: 0;
+  background: transparent;
+}
+
+.empyrean-navbar-links li {
+  width: auto;
+  height: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  border: 0;
+  background: transparent;
+}
+
+.empyrean-navbar-links a[href="/calendar"],
+.empyrean-navbar-links a[href="/images"],
+.empyrean-navbar-links a[href="/faq"],
+.empyrean-navbar-links a[href="/search"],
+.empyrean-navbar-links a[href="/groups"] {
+    display: none!important;
+}
+
+/* Suppression des icônes ModernBB */
+
+.empyrean-navbar-links .mainmenu img {
+  display: none !important;
+}
+
+/* Liens principaux */
+
+.empyrean-navbar-links a.mainmenu {
+  padding: 0 11px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--nav-paper) !important;
+  background: transparent !important;
+  font-family: var(--nav-mono);
+  font-size: 7px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.09em;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.78;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.empyrean-navbar-links a.mainmenu::after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  right: 11px;
+  bottom: -5px;
+  left: 11px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease;
+}
+
+.empyrean-navbar-links a.mainmenu:hover {
+  color: var(--nav-paper) !important;
+  opacity: 1;
+}
+
+.empyrean-navbar-links a.mainmenu:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* ================================
+   NOTIFICATIONS
+================================ */
+
+.empyrean-navbar-links #notiffi_button {
+  min-height: 72px;
+  padding: 0 11px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--nav-paper);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--nav-mono);
+  font-size: 7px;
+  line-height: 1.3;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  opacity: 0.78;
+  transition: opacity 0.2s ease;
+}
+
+.empyrean-navbar-links #notiffi_button:hover {
+  opacity: 1;
+}
+
+.empyrean-navbar-links #notiffi_button .unread_count {
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--nav-night);
+  background: var(--nav-mist);
+  font-family: var(--nav-mono);
+  font-size: 7px;
+}
+
+/* Affiche la pastille uniquement lorsqu'elle contient un nombre */
+
+.empyrean-navbar-links #notiffi_button .unread_count:not(:empty) {
+  display: grid;
+}
+
+/* ================================
+   MENU DE RECHERCHE FORUMACTIF
+================================ */
+
+.empyrean-navbar-links #search_menu {
+  color: #19191a;
+  font-family: "Manrope", sans-serif;
+}
+
+.empyrean-navbar-links #search_menu .overview {
+  width: min(350px, calc(100vw - 38px)) !important;
+  padding: 22px;
+  top: calc(100% + 1px);
+  border: 1px solid rgba(240, 237, 225, 0.34);
+  border-radius: 0;
+  color: var(--nav-paper);
+  background: #191a1d;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.empyrean-navbar-links #search_menu .input-wrap {
+  display: grid;
+  grid-template-columns: 1fr 38px;
+  border: 1px solid var(--nav-line);
+}
+
+.empyrean-navbar-links #search_menu .inputbox {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 0;
+  outline: 0;
+  color: var(--nav-paper);
+  background: transparent;
+  font-family: var(--nav-mono);
+  font-size: 8px;
+}
+
+.empyrean-navbar-links #search_menu .input-wrap button {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-left: 1px solid var(--nav-line);
+  color: var(--nav-paper);
+  background: transparent;
+  cursor: pointer;
+}
+
+.empyrean-navbar-links #search_menu .label-group {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: var(--nav-mono);
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.empyrean-navbar-links #search_menu a {
+  color: var(--nav-mist) !important;
+  font-family: var(--nav-mono);
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ================================
+   BOUTON DU MENU MOBILE
+================================ */
+
+.empyrean-menu-control {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.empyrean-menu-button {
+  min-width: 72px;
+  height: 34px;
+  padding: 0 11px;
+  flex: 0 0 auto;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--nav-line);
+  border-radius: 50%;
+  color: var(--nav-paper);
+  cursor: pointer;
+  font-family: var(--nav-mono);
+  font-size: 7px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.menu-button-close {
+  display: none;
+}
+
+.menu-button-icon {
+  width: 15px;
+  height: 12px;
+  position: relative;
+  display: block;
+}
+
+.menu-button-icon b {
+  width: 15px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  display: block;
+  background: currentColor;
+  transition:
+    top 0.25s ease,
+    transform 0.25s ease;
+}
+
+.menu-button-icon b:first-child {
+  top: 3px;
+}
+
+.menu-button-icon b:last-child {
+  top: 9px;
+}
+
+/* ================================
+   ÉCRANS INTERMÉDIAIRES
+================================ */
+
+/*
+ * La navbar Forumactif comporte beaucoup de liens.
+ * Sur les écrans intermédiaires, certains liens secondaires
+ * sont masqués pour éviter un chevauchement avant le mobile.
+ */
+
+@media (max-width: 1200px) and (min-width: 861px) {
+  .empyrean-navbar {
+    padding-inline: 22px;
+    gap: 20px;
+  }
+
+  .empyrean-navbar-links a.mainmenu {
+    padding-inline: 8px;
+    font-size: 6px;
+  }
+
+  .empyrean-navbar-links a.mainmenu::after {
+    right: 8px;
+    left: 8px;
+  }
+
+  .empyrean-navbar-links a[href="/calendar"],
+  .empyrean-navbar-links a[href="/images"],
+  .empyrean-navbar-links a[href="/faq"],
+  .empyrean-navbar-links a[href="/groups"] {
+    display: none;
+  }
+}
+
+/* ================================
+   VERSION MOBILE
+================================ */
+
+@media (max-width: 860px) {
+  .empyrean-navbar {
+    min-height: 64px;
+    padding: 0 16px;
+    justify-content: space-between;
+  }
+
+  .empyrean-navbar-brand {
+    font-size: 14px;
+  }
+
+  .empyrean-navbar-brand i {
+    margin: 0 6px;
+  }
+
+  .empyrean-menu-button {
+    display: flex;
+  }
+
+  .empyrean-navbar-links {
+    max-height: 0;
+    position: absolute;
+    z-index: 999;
+    top: 64px;
+    right: 0;
+    left: 0;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    border-bottom: 1px solid var(--nav-line);
+    background: rgba(16, 17, 19, 0.98);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition:
+      max-height 0.45s ease,
+      opacity 0.25s ease,
+      visibility 0s linear 0.45s;
+  }
+
+  .empyrean-navbar-links > ul.navbar {
+    width: 100%;
+    padding: 14px 18px 22px !important;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .empyrean-navbar-links > ul.navbar > li {
+    width: 100%;
+    border-bottom: 1px dotted var(--nav-line);
+  }
+
+  .empyrean-navbar-links a.mainmenu {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 10px;
+    justify-content: space-between;
+    font-size: 7px;
+    opacity: 1;
+  }
+
+  .empyrean-navbar-links a.mainmenu::before {
+    content: "↗";
+    margin-left: auto;
+    order: 2;
+    color: var(--nav-mist);
+    font-size: 12px;
+  }
+
+  .empyrean-navbar-links a.mainmenu::after {
+    display: none;
+  }
+
+  .empyrean-navbar-links a#logout {
+    max-width: none;
+  }
+
+  .empyrean-navbar-links #notiffi_button {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 10px;
+    opacity: 1;
+  }
+
+  /*
+   * Ouverture du menu avec la case à cocher.
+   */
+
+  #empyrean-mobile-menu:checked
+    ~ .empyrean-navbar-links {
+    max-height: calc(100vh - 64px);
+    max-height: calc(100svh - 64px);
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+    transition:
+      max-height 0.45s ease,
+      opacity 0.25s ease,
+      visibility 0s;
+  }
+
+  #empyrean-mobile-menu:checked
+    ~ .empyrean-menu-button
+    .menu-button-open {
+    display: none;
+  }
+
+  #empyrean-mobile-menu:checked
+    ~ .empyrean-menu-button
+    .menu-button-close {
+    display: inline;
+  }
+
+  #empyrean-mobile-menu:checked
+    ~ .empyrean-menu-button
+    .menu-button-icon b:first-child {
+    top: 6px;
+    transform: rotate(45deg);
+  }
+
+  #empyrean-mobile-menu:checked
+    ~ .empyrean-menu-button
+    .menu-button-icon b:last-child {
+    top: 6px;
+    transform: rotate(-45deg);
+  }
+
+  /* Positionnement du menu de recherche sur mobile */
+
+  .empyrean-navbar-links #search_menu .overview {
+    position: fixed !important;
+    top: 82px !important;
+    right: 19px !important;
+    left: 19px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Une seule colonne sur les téléphones étroits */
+
+@media (max-width: 520px) {
+  .empyrean-navbar-links > ul.navbar {
+    grid-template-columns: 1fr;
+  }
+
+  .empyrean-navbar-brand span:first-child {
+    display: none;
+  }
+
+  .empyrean-navbar-brand i {
+    margin-left: 0;
+  }
+}
+
+
+.sidebar {
+    position: fixed;
+    background-color: var(--nav-night);
+    border-right: 1px solid var(--nav-line);
+    inset: 0;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    z-index: 999;
+}
+
+.sbdroite {
+    margin: 0 0 0 auto;
+    border-right:none;
+    border-left: 1px solid var(--nav-line);
+}
+
+.sidebar_bottom {
+    width: 45px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  height:100%;
+  justify-content:center;
+  align-items:center;
+}
+
+.sidebar_bottom > a {
+    padding: 5px 8px;
+    background: var(--nav-paper);
+    border-radius: 5px;
+    text-align: center;
+}
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--textColorAccent);
+}
+
+/* THEME SELECTOR */
+
+.theme-selector {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+    height: 35px;
+    transition: height 600ms ease;
+}
+
+.theme-selector.is-open {
+    height: 380px;
+}
+
+.theme-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.theme-options button {
+    display: none;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--nav-paper);
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 500ms ease, color .2s ease, transform .2s ease;
+}
+
+/* Icône active */
+.theme-options button.active {
+    display: flex;
+    opacity: 1;
+  	order: -1;
+}
+
+/* Ouverture */
+.theme-selector.is-opening .theme-options button,
+.theme-selector.is-open .theme-options button {
+    display: flex;
+}
+
+.theme-selector.is-open .theme-options button {
+    opacity: 1;
+}
+
+/* Fermeture */
+.theme-selector.is-closing .theme-options button {
+    display: flex;
+    opacity: 0;
+}
+
+.theme-selector.is-closing .theme-options button.active {
+    opacity: 1;
+}
+
+.theme-options button:hover {
+    transform: scale(1.15);
+}
+
+.theme-options button x {
+    position: absolute;
+    white-space: nowrap;
+    background: #101113;
+    color: #E9E5D9;
+    text-transform: uppercase;
+    right: 40px;
+    text-align: right;
+    font-size: 12px;
+    padding: 7px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.theme-options button:hover x {
+    opacity: 1;
+    visibility: visible;
+}
+  
+  .theme-options hr {
+    display: none;
+}
+
+.theme-selector:hover hr {
+    display: block;
+    border-top:1px solid black;
+    width: 100%;
+}
+
+
+
+
+
+/* ================================
+   TICKER SOUS LA BANNIÈRE
+================================ */
+
+.infoforum {
+  min-height: 40px;
+  padding: 8px 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 25px;
+  overflow: hidden;
+  color: var(--nav-paper);
+  background: var(--nav-night);
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.infoforum > span {
+  display: block;
+}
+
+.infoforum > i {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  flex: 0 0 12px;
+  display: block;
+}
+
+.infoforum > i::before,
+.infoforum > i::after {
+  content: "";
+  position: absolute;
+  background: var(--nav-paper);
+}
+
+.infoforum > i::before {
+  width: 1px;
+  height: 12px;
+  left: 5px;
+  top: 0;
+}
+
+.infoforum > i::after {
+  width: 12px;
+  height: 1px;
+  left: 0;
+  top: 5px;
+}
+
+@media (max-width: 760px) {
+  .infoforum {
+    padding-inline: 19px;
+    justify-content: flex-start;
+    gap: 22px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .infoforum::-webkit-scrollbar {
+    display: none;
+  }
+}
