@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Italiana&family=Manrope:wght@400;500;600&display=swap");
 
-:root {
+:root[data-color-scheme="nuit"] {
   --nav-night: #101113;
   --nav-paper: #ece9df;
   --nav-mist: #b9c4c8;
